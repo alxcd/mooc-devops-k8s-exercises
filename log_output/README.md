@@ -7,5 +7,7 @@ kubectl logs -l app=log-output-ex1-1 -f
 
 ### exercise 1.3
 
+```
 kubectl apply -f manifests/deployment.yaml
 kubectl logs -l app=log-output -f
+```
