@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-output-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-output
+  template:
+    metadata:
+      labels:
+        app: log-output
+    spec:
+      containers:
+        - name: log-output
+          image: alxcd/devops_k8s-ex1_1@sha256:ed2d6fb568df2e65a83b85296c7f1b5814929c11457fa8202943e5313b427f91
