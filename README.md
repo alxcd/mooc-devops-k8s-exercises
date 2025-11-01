@@ -7,3 +7,4 @@
 - [1.3.](https://github.com/alxcd/mooc-devops-k8s-exercises/tree/1.3/log_output)
 - [1.4.](https://github.com/alxcd/mooc-devops-k8s-exercises/tree/1.4/the_project/todo_app)
 - [1.5.](https://github.com/alxcd/mooc-devops-k8s-exercises/tree/1.5/the_project/todo_app)
+- [1.6.](https://github.com/alxcd/mooc-devops-k8s-exercises/tree/1.6/the_project/todo_app)

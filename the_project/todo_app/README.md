@@ -18,3 +18,10 @@ kubectl logs -l app=todo-app -f
 kubectl apply -f manifests/deployment.yaml
 kubectl port-forward todo-app-dep-f74c88fc6-s8djd 3000:3001
 ```
+
+### exercise 1.6
+
+```
+kubectl apply -f manifests/deployment.yaml
+kubectl apply -f manifests/nodeport_service.yaml
+```
