@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: alxcd/devops_k8s-todo_app@sha256:4f868a5ada2cb4151eeeefe317679c92e768a3cf88d1829271b8e7522f68e509
+          image: alxcd/devops_k8s-todo_app@sha256:ba099bd1ddd7b8147d03f4e095efa0e8996c14dcb1b75af00b4df1d851520e19

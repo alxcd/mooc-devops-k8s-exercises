@@ -11,3 +11,10 @@ kubectl logs -l app=todo-app-ex1-2
 kubectl apply -f manifests/deployment.yaml
 kubectl logs -l app=todo-app -f
 ```
+
+### exercise 1.5
+
+```
+kubectl apply -f manifests/deployment.yaml
+kubectl port-forward todo-app-dep-f74c88fc6-s8djd 3000:3001
+```
