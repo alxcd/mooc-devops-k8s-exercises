@@ -11,3 +11,10 @@ kubectl logs -l app=log-output-ex1-1 -f
 kubectl apply -f manifests/deployment.yaml
 kubectl logs -l app=log-output -f
 ```
+
+### exercise 1.7
+
+```
+kubectl apply -f manifests
+curl localhost:8081
+```

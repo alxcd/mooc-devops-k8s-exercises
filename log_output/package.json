@@ -1,0 +1,17 @@
+{
+  "name": "log_output",
+  "version": "1.0.0",
+  "description": "``` kubectl create deployment log-output-ex1-1 --image=alxcd/devops_k8s-ex1_1 kubectl logs -l app=log-output-ex1-1 -f ```",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

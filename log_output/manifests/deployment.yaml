@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: log-output
-          image: alxcd/devops_k8s-ex1_1@sha256:ed2d6fb568df2e65a83b85296c7f1b5814929c11457fa8202943e5313b427f91
+          image: alxcd/devops_k8s-log-output_app@sha256:6b8677b7d0583369d58eb7047e82d96fd7a4f8b9fb63da0e6848a833ceee9525
