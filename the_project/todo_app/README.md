@@ -25,3 +25,10 @@ kubectl port-forward todo-app-dep-f74c88fc6-s8djd 3000:3001
 kubectl apply -f manifests/deployment.yaml
 kubectl apply -f manifests/nodeport_service.yaml
 ```
+
+### exercise 1.8
+
+```
+kubectl apply -f manifests
+curl localhost:8081
+```
