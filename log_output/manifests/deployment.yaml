@@ -12,6 +12,32 @@ spec:
       labels:
         app: log-output
     spec:
+      volumes: # Define volume
+        - name: shared-logs
+          emptyDir: {}
+
       containers:
-        - name: log-output
-          image: alxcd/devops_k8s-log-output_app@sha256:6b8677b7d0583369d58eb7047e82d96fd7a4f8b9fb63da0e6848a833ceee9525
+        - name: log-output-reader
+          image: alxcd/devops_k8s-log-output_reader@sha256:fd31bdd399b2a09b7f34f4d21981ecdc9050c066a2359b4f159842dc81eb1255
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          volumeMounts:
+          - name: shared-logs
+            mountPath: /usr/src/app/logs
+        - name: log-output-writer
+          image: alxcd/devops_k8s-log-output_writer@sha256:359b283115832cecf8654f79f4cfbcf15b83d3cb418b1c678a260eca5d9a8b19
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          volumeMounts:
+          - name: shared-logs
+            mountPath: /usr/src/app/logs
