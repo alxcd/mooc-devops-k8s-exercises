@@ -12,13 +12,14 @@ spec:
       labels:
         app: log-output
     spec:
-      volumes: # Define volume
+      volumes:
         - name: shared-logs
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: log-pong-claim
 
       containers:
         - name: log-output-reader
-          image: alxcd/devops_k8s-log-output_reader@sha256:fd31bdd399b2a09b7f34f4d21981ecdc9050c066a2359b4f159842dc81eb1255
+          image: alxcd/devops_k8s-log-output_reader@sha256:17b8d1885df08a741e498cd65205a3f0e30599a85f9e3f383baa8cc6ac5f3f0d
           resources:
             requests:
               memory: "64Mi"
@@ -30,7 +31,7 @@ spec:
           - name: shared-logs
             mountPath: /usr/src/app/logs
         - name: log-output-writer
-          image: alxcd/devops_k8s-log-output_writer@sha256:359b283115832cecf8654f79f4cfbcf15b83d3cb418b1c678a260eca5d9a8b19
+          image: alxcd/devops_k8s-log-output_writer@sha256:a8509dca7e255ef963e55b579c4ba566d9e900ed68f9807ae03e89cddaac3cad
           resources:
             requests:
               memory: "64Mi"

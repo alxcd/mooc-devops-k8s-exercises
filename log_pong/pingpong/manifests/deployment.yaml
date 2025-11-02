@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pingpong-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pingpong
+  template:
+    metadata:
+      labels:
+        app: pingpong
+    spec:
+      volumes:
+        - name: shared-logs
+          persistentVolumeClaim:
+            claimName: log-pong-claim
+
+      containers:
+        - name: pingpong
+          image: alxcd/devops_k8s-pingpong_app@sha256:0eb059a93ed9de69e755087d4a04b2f57cb69066b91681ee2dcb7f1a85975ac0
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          volumeMounts:
+          - name: shared-logs
+            mountPath: /usr/src/app/logs
