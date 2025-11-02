@@ -18,3 +18,10 @@ kubectl logs -l app=log-output -f
 kubectl apply -f manifests
 curl localhost:8081
 ```
+
+### exercise 1.10
+
+```
+kubectl apply -f manifests
+curl localhost:8081
+```
