@@ -2,5 +2,23 @@
 <html>
   <body>
     <img src="/img/image.jpg" alt="Daily inspirational image" width="600">
+    <input type="text" maxlength="140">
+    <button>create</button>
+    <ul id="notes-list">
+    </ul>
+    <script>
+      const notes = [
+        'First note',
+        'Second note',
+        'Third note'
+      ];
+
+      const ul = document.getElementById('notes-list');
+      notes.forEach(note => {
+        const li = document.createElement('li');
+        li.textContent = note;
+        ul.appendChild(li);
+      });
+    </script>
   </body>
 </html>

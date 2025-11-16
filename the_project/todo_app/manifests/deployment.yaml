@@ -19,7 +19,7 @@ spec:
 
       containers:
         - name: todo-app
-          image: alxcd/devops_k8s-todo_app@sha256:01cc99f63c43d86fc6ab4ecdfbe2ccec6984ee9ef1ef3ab58011addbb6ea72db
+          image: alxcd/devops_k8s-todo_app@sha256:0cadbe7e6587101595e48a1e520ee1167de844f7ee336c67b35d7486fe41f09d
           resources:
             requests:
               memory: "64Mi"
