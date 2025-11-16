@@ -1,25 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-app-dep
+  name: image-fetcher-dep
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: todo-app
+      app: image-fetcher
   template:
     metadata:
       labels:
-        app: todo-app
+        app: image-fetcher
     spec:
       volumes:
         - name: shared-img
           persistentVolumeClaim:
             claimName: the-project-claim
-
       containers:
-        - name: todo-app
-          image: alxcd/devops_k8s-todo_app@sha256:01cc99f63c43d86fc6ab4ecdfbe2ccec6984ee9ef1ef3ab58011addbb6ea72db
+        - name: image-fetcher
+          image: alxcd/devops_k8s-image-fetcher@sha256:df7e8d443da3847cd82de2fd878cc4f529c3d2eb0bbf1fed26a6208d0b32a9ed
           resources:
             requests:
               memory: "64Mi"
@@ -29,4 +28,4 @@ spec:
               cpu: "250m"
           volumeMounts:
           - name: shared-img
-            mountPath: /usr/src/app/public/img
+            mountPath: /usr/src/app/img
